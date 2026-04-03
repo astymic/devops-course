@@ -77,7 +77,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... your_email@example.com
 
 ```bash
 # На хості:
-cd ~/devops-ai-assistant/
+cd ~/devops-course/training-project/
 vagrant up
 vagrant ssh
 ```

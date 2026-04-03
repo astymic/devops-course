@@ -19,8 +19,8 @@
 Відкрийте термінал **на вашому комп'ютері (хості)**, перейдіть у теку з Vagrantfile та підключіться:
 
 ```bash
-# Перейти в теку з Vagrantfile (шлях відповідно до вашого налаштування)
-cd devops-course/DevOps/devops-ai-assistant/10_Implementation/01_vm/
+# Перейти в теку з Vagrantfile (створена в Темі 1)
+cd ~/devops-course/training-project/
 
 # Запустити VM (якщо вона зупинена після минулого заняття)
 vagrant up

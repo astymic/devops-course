@@ -20,7 +20,7 @@
 >
 > | Термінал | Де відкритий | Які команди |  Підказка у рядку |
 > | -------- | ------------ | ----------- | ----------------- |
-> | 🖥️ **Хост** | Ваш комп'ютер, у папці `01_vm/` | `vagrant up`, `vagrant ssh`, `vagrant halt`, `vagrant snapshot` | `user@your-pc` |
+> | 🖥️ **Хост** | Ваш комп'ютер, у папці `training-project/` | `vagrant up`, `vagrant ssh`, `vagrant halt`, `vagrant snapshot` | `user@your-pc` |
 > | 🐧 **VM** | Всередині Ubuntu VM після `vagrant ssh` | `uname`, `free`, `ip addr` та інші Linux-команди | `vagrant@devops-sandbox` |
 >
 > `vagrant` — це програма на **вашому комп'ютері**. Вона не встановлена у VM, тому команди `vagrant halt`, `vagrant snapshot` тощо потрібно виконувати **тільки у терміналі хоста**.
@@ -70,14 +70,14 @@ vagrant --version
 
 ---
 
-### Крок 2: Клонуємо репозиторій проєкту
+### Крок 2: Клонуємо репозиторій курсу
 
 ```bash
 # Клонуємо публічний студентський репозиторій
 git clone https://github.com/sobol-mo/devops-course.git
 
-# Переходимо в папку з Vagrantfile для Теми 1
-cd devops-course/devops-ai-assistant/10_Implementation/01_vm/
+# Переходимо в папку training-project — ваш робочий простір на весь курс
+cd devops-course/training-project/
 ```
 
 **Очікуваний результат:** У поточній теці є файл `Vagrantfile`. Перегляньте його:

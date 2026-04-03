@@ -20,7 +20,7 @@
 
 ```bash
 # На хості:
-cd ~/devops-ai-assistant/
+cd ~/devops-course/training-project/
 vagrant up
 vagrant ssh
 ```
