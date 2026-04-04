@@ -9,6 +9,7 @@
     app_dir: /opt/training-app
     app_repo: "https://github.com/astymic/devops-course.git"
     app_code_subdir: "devops-ai-assistant/10_Implementation/01_vm/training-project"
+    app_code_dir: "{{ app_dir }}/repo/devops-ai-assistant/10_Implementation/01_vm/training-project"
 
   tasks:
     - name: Створити користувача для додатку
@@ -63,9 +64,17 @@
 
     - name: Встановити Python-залежності додатку
       pip:
-        requirements: "{{ app_dir }}/repo/{{ app_code_subdir }}/requirements.txt"
+        requirements: "{{ app_code_dir }}/requirements.txt"
         virtualenv: "{{ app_dir }}/venv"
         virtualenv_command: /usr/bin/python3 -m venv
       become_user: "{{ app_user }}"
+
+    - name: Створити символічне посилання на app.py
+      file:
+        src: "{{ app_code_dir }}/app.py"
+        dest: "{{ app_dir }}/app.py"
+        state: link
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
 
     
