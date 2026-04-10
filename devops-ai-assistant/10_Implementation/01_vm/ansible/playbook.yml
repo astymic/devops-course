@@ -77,4 +77,33 @@
         owner: "{{ app_user }}"
         group: "{{ app_user }}"
 
-    
+    - name: Скопіювати unit-файл сервісу
+      copy:
+        src: training-app.service
+        dest: /etc/systemd/system/training-app.service
+        owner: root
+        group: root
+        mode: '0644'
+      notify:
+        - Reload systemd
+        - Restart training-app
+
+    - name: Активувати автозапуск сервісу
+      systemd:
+        name: training-app
+        enabled: yes
+
+    - name: Запустити сервіс
+      systemd:
+        name: training-app
+        state: started
+
+  handlers:
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes
+
+    - name: Restart training-app
+      systemd:
+        name: training-app
+        state: restarted
